@@ -47,7 +47,7 @@ describe('app routes', () => {
   });
 
 
-  it('fails when a bad email is used', async () => {
+  it('fails when a bad email is used', async() => {
     await User.create({ email: 'test@test.com', password: 'password' });
     return request(app)
       .post('/api/v1/auth/login')
@@ -60,7 +60,7 @@ describe('app routes', () => {
       });
   });
 
-  it('fails when a bad password is used', async () => {
+  it('fails when a bad password is used', async() => {
     await User.create({ email: 'test@test.com', password: 'password' });
     return request(app)
       .post('/api/v1/auth/login')
@@ -72,5 +72,5 @@ describe('app routes', () => {
         });
       });
   });
-  
+
 });
